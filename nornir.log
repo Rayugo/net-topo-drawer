@@ -1,0 +1,124 @@
+2024-03-25 18:54:00,584 -  nornir.core -     INFO -        run() - Running task 'routeros_get' with args {'path': '/ip/address', 'dynamic': 'false'} on 1 hosts
+2024-03-25 18:54:00,614 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'routeros_get' failed with traceback:
+Traceback (most recent call last):
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\tasks\routeros_get.py", line 37, in routeros_get
+    api = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\connections\__init__.py", line 63, in open
+    self.connection = self._pool.get_api()
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api.py", line 45, in get_api
+    self.socket = api_socket.get_socket(self.host, self.port,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api_socket.py", line 33, in get_socket
+    api_socket = ssl_context.wrap_socket(api_socket,server_hostname=hostname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1006)
+
+2024-03-25 18:54:25,698 -  nornir.core -     INFO -        run() - Running task 'routeros_get' with args {'path': '/ip/address', 'dynamic': 'false'} on 1 hosts
+2024-03-25 18:54:25,715 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'routeros_get' failed with traceback:
+Traceback (most recent call last):
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\tasks\routeros_get.py", line 37, in routeros_get
+    api = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\connections\__init__.py", line 63, in open
+    self.connection = self._pool.get_api()
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api.py", line 45, in get_api
+    self.socket = api_socket.get_socket(self.host, self.port,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api_socket.py", line 33, in get_socket
+    api_socket = ssl_context.wrap_socket(api_socket,server_hostname=hostname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1006)
+
+2024-03-25 18:57:39,090 -  nornir.core -     INFO -        run() - Running task 'routeros_get' with args {'path': '/ip/address', 'dynamic': 'false'} on 1 hosts
+2024-03-25 18:57:39,108 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'routeros_get' failed with traceback:
+Traceback (most recent call last):
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\tasks\routeros_get.py", line 37, in routeros_get
+    api = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\connections\__init__.py", line 63, in open
+    self.connection = self._pool.get_api()
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api.py", line 45, in get_api
+    self.socket = api_socket.get_socket(self.host, self.port,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api_socket.py", line 33, in get_socket
+    api_socket = ssl_context.wrap_socket(api_socket,server_hostname=hostname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1006)
+
+2024-03-25 18:57:59,422 -  nornir.core -     INFO -        run() - Running task 'routeros_get' with args {'path': '/ip/address'} on 1 hosts
+2024-03-25 18:57:59,438 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'routeros_get' failed with traceback:
+Traceback (most recent call last):
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\tasks\routeros_get.py", line 37, in routeros_get
+    api = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\nornir_routeros\plugins\connections\__init__.py", line 63, in open
+    self.connection = self._pool.get_api()
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api.py", line 45, in get_api
+    self.socket = api_socket.get_socket(self.host, self.port,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\studia\semestr_6\io\.venv\Lib\site-packages\routeros_api\api_socket.py", line 33, in get_socket
+    api_socket = ssl_context.wrap_socket(api_socket,server_hostname=hostname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1006)
+
