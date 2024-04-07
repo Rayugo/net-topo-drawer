@@ -7,6 +7,7 @@
 from netmiko import ConnectHandler
 from crawler import Crawler
 
+
 """"
 def main():
     print("Running 'main' ...")
@@ -26,8 +27,9 @@ mikrotik_1 = {
 }
 
 def main():
-    c = Crawler(mikrotik_1)
-    c.run_crawler_root()
+    c = Crawler()
+    c.run_crawler(mikrotik_1)
+    c.print_net_devices()
 
 if __name__ == "__main__":
     main()
