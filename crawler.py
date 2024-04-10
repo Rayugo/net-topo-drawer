@@ -2,6 +2,7 @@ from netmiko import ConnectHandler
 import re
 from time import sleep
 from pprint import pprint
+from copy import copy
 
 """
 self.net_devices = {
@@ -65,7 +66,7 @@ class Crawler:
             found_con = {key: value.strip('"') for key, value in matches}
             self.net_devices[identity]['connections'][c] = found_con
 
-        curr_net_devices = self.net_devices #PROBLEM Z REKURSJA !!! SPROBOWAC INNE ROZWIAZANIE
+        curr_net_devices = self.net_devices.copy() #need to do copy because of recursive search
         
         #trying to connect to neighbouring devices that do not exist in self.net_devices
         for net_dev in curr_net_devices.values():
@@ -76,11 +77,9 @@ class Crawler:
                         'username': 'admin',
                         'password': 'admin',
                     }
-                    #print(con)
                     new_net_dev['host'] = con['address']
                     self.run_crawler(new_net_dev) #start recursive search until no new devices found
         
-    #need to add detecting looping e.x 172.16.0.1 -> 172.16.0.2 -> 172.16.0.1 ...
     def _exists(self, found_con_idenity):
         for identity in self.net_devices.keys():
             if identity == found_con_idenity:
@@ -88,4 +87,4 @@ class Crawler:
         return False
 
     def print_net_devices(self):
-        print(self.net_devices)
+        pprint(self.net_devices)

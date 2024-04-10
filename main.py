@@ -29,7 +29,7 @@ mikrotik_1 = {
 def main():
     c = Crawler()
     c.run_crawler(mikrotik_1)
-    #c.print_net_devices()
+    c.print_net_devices()
 
 if __name__ == "__main__":
     main()
