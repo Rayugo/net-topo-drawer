@@ -32,11 +32,6 @@ self.net_devices = {
 
 """
 
-#zrobic zmienna przechowujaca obecne urzadzenie z ktorym jestesmy polaczeni
-
-#jesli nowo dodane 'connection' posiada 'identity' urzadzenia ktore
-#juz istnieje R1, R2 itp. to dodaj to 'connection' ale nie lacz sie znim
-
 #czy software-id identyfikuje unikalnie urzadzenie ? czy zostac przy identity?
 
 
@@ -50,13 +45,13 @@ class Crawler:
 
     def run_crawler(self, net_dev):
         print(f"Connecting to {net_dev['host']} ...")
-        self.curr_net_de = net_dev
+        self.curr_net_dev = net_dev
         net_connect = ConnectHandler(**net_dev)
         neighbour = net_connect.send_command("ip neighbor/print detail") #here need to detect what device we are trying to connect to (cisco, huawei ...)
         identity = net_connect.send_command("system identity/print")
         neighbour_splited = neighbour.split('\n')
         neighbour_splited = list(filter(None, neighbour_splited))
-        identity = re.search(self.pattern_identity,identity) #dodac moze jakis warunek gdyby nie znalazlo identity
+        identity = re.search(self.pattern_identity,identity)
         identity = identity.group(1)
         
         #adding found connections to neighbouring net devices
