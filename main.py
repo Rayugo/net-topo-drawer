@@ -1,10 +1,3 @@
-import tkinter as tk
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import numpy as np
-import matplotlib.pyplot as plt
-import networkx as nx
-
-from netmiko import ConnectHandler
 from crawler import Crawler
 from netgraph import InteractiveGraph
 
@@ -123,26 +116,18 @@ def draw_graph():
 
 mikrotik_1 = {
     'device_type': 'mikrotik_routeros',
-    'host': '192.168.126.130',
+    'host': '192.168.19.129',
     'username': 'admin',
     'password': 'admin',
 }
+
 
 def main():
     c = Crawler()
     c.run_crawler(mikrotik_1)
     c.print_net_devices()
+    g = GuiInterface(c.get_net_devices())
 
-    root = tk.Tk()
-    root.title("Net Topology Drawer")
-    root.minsize(width=1280, height=720)
-    frame = tk.Frame(root)
-    frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-draw_graph()
-
-root.mainloop()
 
 if __name__ == "__main__":
     main()
-    

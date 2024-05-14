@@ -93,6 +93,9 @@ class Crawler:
     def print_net_devices(self):
         pprint(self.net_devices)
 
+    def get_net_devices(self):
+        return self.net_devices
+
     def _get_device_data(self, device_type):
         net_connect = ConnectHandler(**self.curr_net_dev)
         if device_type == 'mikrotik_routeros':
