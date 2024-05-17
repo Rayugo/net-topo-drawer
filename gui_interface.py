@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import Menu, messagebox
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,20 +12,34 @@ from netgraph import InteractiveGraph
 
 
 class GuiInterface:
-    def __init__(self, net_devices):
-        self.net_devices = net_devices
+    def __init__(self, controller):
+        self.controller = controller
         self.root = tk.Tk()
         self.root.title("Net Topology Drawer")
         self.root.minsize(width=800, height=800)
+        self.create_menu()
         self.frame = tk.Frame(self.root)
         self.frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-        self.draw_graph()
-        self.root.mainloop()
 
-    def draw_graph(self):
+    def create_menu(self):
+        menu = Menu(self.root)
+        self.root.config(menu=menu)
+
+        app_menu = Menu(menu, tearoff=0)
+        menu.add_cascade(label="Application", menu=app_menu)
+        app_menu.add_command(label="Start Crawler", command=self.controller.start_crawler)
+        app_menu.add_separator()
+        app_menu.add_command(label="Exit", command=self.root.quit)
+
+    def update_graph(self, net_devices):
+        for widget in self.frame.winfo_children():
+            widget.destroy()
+        #self.frame.pack_forget()
+        #self.frame = tk.Frame(self.root)
+        #self.frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
         g = nx.Graph()
-
-        data = self.net_devices
+        data = net_devices
 
         for router, connections in data.items():
             g.add_node(router)
@@ -115,6 +130,9 @@ class GuiInterface:
 
         fig.canvas.mpl_connect('button_release_event', update_label_positions)
 
-        canvas = FigureCanvasTkAgg(fig, master=self.root)
+        canvas = FigureCanvasTkAgg(fig, master=self.frame)
         canvas.draw()
         canvas.get_tk_widget().pack(fill=tk.BOTH, expand=1)
+
+    def show_error(self, message):
+        messagebox.showerror("Error", message)

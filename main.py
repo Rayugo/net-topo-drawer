@@ -1,19 +1,8 @@
-from crawler import Crawler
-from gui_interface import GuiInterface
-
-mikrotik_1 = {
-    'device_type': 'mikrotik_routeros',
-    'host': '192.168.19.129',
-    'username': 'admin',
-    'password': 'admin',
-}
-
+from controller import Controller
 
 def main():
-    c = Crawler()
-    c.run_crawler(mikrotik_1)
-    c.print_net_devices()
-    g = GuiInterface(c.get_net_devices())
+    c = Controller()
+    c.start_gui()
 
 
 if __name__ == "__main__":
