@@ -26,6 +26,7 @@ class Controller:
             c = Crawler()
             c.run_crawler(device_info)
             self.net_devices = c.get_net_devices()
-            self.view.root.after(0, self.view.update_graph, self.net_devices)  # Aktualizuj GUI
+            self.view.root.after(0, self.view.update_graph, self.net_devices)
+            c.print_net_devices()
         except Exception as e:
             self.view.root.after(0, self.view.show_error, f"An error occurred: {str(e)}")
