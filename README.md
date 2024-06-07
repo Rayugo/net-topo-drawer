@@ -34,7 +34,7 @@ Ensure you have the following installed on your machine:
 
 ### Running the app
 
-The app , run the following command:
+To run the app use the following command:
 
 ```sh
 python main.py
