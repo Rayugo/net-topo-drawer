@@ -29,7 +29,10 @@ Ensure you have the following installed on your machine:
     ```
 
 2. Install the required Python packages.
-
+   
+## Suported devices
+- Mikrotik
+  
 ## Usage
 
 ### Running the app
@@ -45,5 +48,7 @@ python main.py
 - **Real-time Network Topology Visualization:** Automatically updates the network topology based on live data from the crawler.
 - **User-Friendly Interface:** Easy-to-use graphical interface to view network topology.
 - **Modularity:** Crawler and graphical interface are modular, allowing for easy updates and maintenance.
+
+
 
 Thank you for using Net-Topo-Drawer! We hope it helps you visualize and manage your network topology effectively :)
